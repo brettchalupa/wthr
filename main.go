@@ -11,9 +11,15 @@ import (
 
 var city string
 
+type condition struct {
+	Main        string `json:"main"`
+	Description string `json:"description"`
+}
+
 type weatherData struct {
-	Name string `json:"name"`
-	Main struct {
+	Name       string      `json:"name"`
+	Conditions []condition `json:"weather"`
+	Main       struct {
 		Kelvin float64 `json:"temp"`
 	} `json:"main"`
 }
@@ -28,7 +34,9 @@ func main() {
 	}
 
 	fmt.Printf("Current weather in %v is: ", data.Name)
-	fmt.Printf("%d°F\n", int64(tempInF(data.Main.Kelvin)))
+	fmt.Printf("%d°F, ", int64(tempInF(data.Main.Kelvin)))
+	fmt.Printf("%s", data.Conditions[0].Description)
+	fmt.Printf("\n") // new line at the end
 }
 
 // Queries the OpenWeatherMap API for the passed in city. Returns
