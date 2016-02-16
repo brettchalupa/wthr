@@ -1,5 +1,8 @@
 # wthr
 
+[![CI Build Status](https://travis-ci.org/brettchalupa/wthr.svg?branch=master)](https://travis-ci.org/brettchalupa/wthr)
+[![Go Report Card](https://goreportcard.com/badge/github.com/brettchalupa/wthr)](https://goreportcard.com/report/github.com/brettchalupa/wthr)
+
 A command-line tool that outputs the current weather conditions and
 forecast.
 
